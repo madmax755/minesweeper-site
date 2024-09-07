@@ -1,38 +1,45 @@
 <!DOCTYPE html>
-
+<html lang="en">
 <head>
-    <meta charset=utf-8>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" type="text/css" href="styles.css?v=1.0">
-    <script defer src="minesweeper.js?v=1.0"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <title>Minesweeper</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js" defer></script>
+    <script src="assets/js/minesweeper.js" defer></script>
 </head>
-
 <body>
+    <!-- Main container for the game -->
     <div id="flex-container">
+        <!-- Container for the game menu -->
         <div id="menu-container">
+            <!-- Game title -->
             <div id="title">
                 <h1>Minesweeper</h1>
             </div>
-            <div id="select-div">
-            <table id="table-select">
-                <tr>
-                    <td id="easy" class="selector">Easy</td>
-                    <td id="med" class="selector">Medium</td>
-                    <td id="hard" class="selector">Hard</td>
-                </tr>
-            </table>
-            </div>
 
-        </div>
-        <div id="sweeper-container">
-            <div id="grid-container">
+            <!-- Difficulty selection buttons -->
+            <div id="select-div">
+                <table id="table-select">
+                    <tr>
+                        <td id="easy" class="selector">Easy</td>
+                        <td id="med" class="selector">Medium</td>
+                        <td id="hard" class="selector">Hard</td>
+                    </tr>
+                </table>
             </div>
         </div>
+
+        <!-- Container for the game grid -->
+        <div id="sweeper-container">
+            <div id="grid-container"></div>
+        </div>
+
+        <!-- Secret input field and submit button -->
         <div id="secret-input-container">
-            <input type="password" placeholder="enter secret code" id="secret-input"></input>
+            <input type="text" id="secret-input" placeholder="Enter secret code">
             <button id="submit-secret">Submit</button>
         </div>
     </div>
 </body>
+</html>

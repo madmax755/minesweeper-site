@@ -1,0 +1,114 @@
+/* CSS custom properties for grid dimensions */
+:root {
+    --grid-cols: 1;
+    --grid-rows: 1;
+}
+
+/* Set background color for the entire page */
+body {
+    background-color: #2d2f31;
+}
+
+/* Styles for the secret input container */
+#secret-input-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+/* Styles for the main game container */
+#sweeper-container {
+    display: flex;
+    justify-content: center;
+}
+
+/* Styles for the grid container */
+#grid-container {
+    display: grid;
+    grid-template-rows: repeat(var(--grid-rows), calc(min(99vw, 500px) / var(--grid-rows)));
+    grid-template-columns: repeat(var(--grid-cols), calc(min(99vw, 500px) / var(--grid-cols)));
+}
+
+/* Styles for individual grid items (cells) */
+.grid-item {
+    touch-action: manipulation;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: whitesmoke;
+    font-size: calc(256px / var(--grid-rows));
+}
+
+/* Styles for flag images */
+.flag {
+    /* So the clicks go through the flag to the cell beneath */
+    pointer-events: none;
+    width: calc(300px / var(--grid-cols));
+    height: calc(300px / var(--grid-rows));
+}
+
+/* Styles for responsive images */
+.responsive-image {
+    width: 100vw;
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensures image behaves like a block element */
+    margin: 0 auto; /* Center the image horizontally */
+    max-width: 500px; /* Ensure image doesn't exceed its natural size */
+}
+
+/* Styles for the main flex container */
+#flex-container {
+    width: calc(100vw - 20px);
+}
+
+/* Styles for the menu container */
+#menu-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Styles for the table select element */
+#table-select {
+    width: 100%;
+    height: 40px;
+}
+
+/* Styles for the main heading */
+h1 {
+    margin-top: 0px;
+    margin-bottom: 5px;
+    color: whitesmoke;
+    font-size: 40px;
+}
+
+/* Styles for difficulty selector buttons */
+.selector {
+    width: 33.3%;
+    text-align: center;
+    background-color: #383a3d;
+    color: whitesmoke;
+}
+
+/* Styles for the difficulty select container */
+#select-div {
+    width: min(100vw, 500px);
+}
+
+/* Styles for overlay elements (win/fail screens) */
+.overlay {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    z-index: 9998;
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    padding-top: 10vh;
+}
