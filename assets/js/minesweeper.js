@@ -379,6 +379,11 @@ function flag(posarr) {
             flagged.splice(index, 1);
             document.getElementById(posarr.join(" ")).innerHTML = "";
         } else {
+            if ('vibrate' in navigator) {
+                // Vibrate for 200ms
+                navigator.vibrate(50);
+                console.log("vibration attempted");
+            }
             document.getElementById(posarr.join(" ")).innerHTML = "<img src='assets/media/flag.png' class='flag'>";
             flagged.push(posarr)
         }
